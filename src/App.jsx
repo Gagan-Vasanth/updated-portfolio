@@ -8,9 +8,9 @@ import { ProjectsSection } from "./containers/ProjectsSection";
 
 const PortfolioMainContainer = styled.div`
   height: 100vh;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;
+  background-color: #f9f9f9;
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
@@ -21,9 +21,9 @@ const App = () => {
   return (
     <PortfolioMainContainer>
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection />
       <ProjectsSection />
-      <ContactSection />
+      <ContactSection /> */}
     </PortfolioMainContainer>
   );
 };

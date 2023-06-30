@@ -3,26 +3,37 @@ import { styled } from "styled-components";
 import { Navbar } from "./Navbar";
 
 import HandWave from "../assets/wave.png";
+import HtmlIcon from "../assets/html.png";
+import CssIcon from "../assets/css3.png";
+import JsIcon from "../assets/javascript.png";
+import NodeJsIcon from "../assets/nodejs.png";
+import ReactIcon from "../assets/reactjs.png";
+import SQLIcon from "../assets/sql.png";
+import TailwindIcon from "../assets/tailwind.png";
+import MongoIcon from "../assets/mongodb.png";
+import AWSIcon from "../assets/aws.png";
+
+import { Player } from "@lottiefiles/react-lottie-player";
+
 const HeroSectionContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  background-color: #f9f9f9;
   scroll-snap-align: center;
 `;
 
 const CenterContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 0 4rem;
+  padding-top: 200px;
 `;
 
 const InfoContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  gap: 10rem;
+  justify-content: space-between;
+  position: relative;
 `;
 
 const InfoLeftAndRight = styled.div`
@@ -49,48 +60,116 @@ const DeveloperSubDescription = styled.h1`
   margin-top: 20px;
 `;
 
+const TechStackContainer = styled.div`
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+const TechStackHeading = styled.div`
+  border-right: 2px solid rgba(45, 46, 50, 0.5);
+  color: #2d2e32;
+  font-weight: 500;
+  font-size: 20px;
+  margin-right: 2%;
+  padding-right: 2rem;
+`;
+
+const TechIconsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+`;
+
+const TechIconContainer = styled.div`
+  width: 65px;
+  height: 65px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+`;
+
+const ScrollAnimationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 70px 0px;
+  align-items: flex-start;
+  justify-content: center;
+`;
+
 export const HeroSection = () => {
   return (
     <HeroSectionContainer>
       <Navbar />
       <CenterContainer>
-        <InfoContainer>
+        <InfoContainer className="info-container">
           <InfoLeftAndRight className="hero-desc">
+            <DeveloperSubDescription
+              className="hero-sub-desc"
+              style={{ marginLeft: "3px", lineHeight: "2.5" }}
+            >
+              Hi! I'm <b>Gagan Vasanth</b>
+            </DeveloperSubDescription>
             <DeveloperHeading>
               Full-Stack JS Developer{" "}
               <img src={HandWave} alt="helo" width={"60px"} height={"60px"} />
             </DeveloperHeading>
             <DeveloperSubDescription className="hero-sub-desc">
-              Hi, I'm Gagan Vasanth. An Experinced Full-Stack Developer based out
-              of Bangalore, India.
+              An Experinced Full-Stack Developer based out of Bangalore, India.
             </DeveloperSubDescription>
-            <span>
-              <a
-                className="fa-icons"
-                aria-label="linkedin"
-                rel="nonreferer"
-                target="_blank"
-                href="https://www.linkedin.com/in/gagan-vasanth/"
-              >
-                <i class="fa-brands fa-linkedin fa-2xs"></i>
-              </a>
-              <a></a>
-              <a
-                className="fa-icons"
-                aria-label="github"
-                rel="nonreferer"
-                target="_blank"
-                href="https://github.com/Gagan-Vasanth"
-              >
-                <i class="fa-brands fa-github fa-2xs"></i>
-              </a>
-              <a></a>
-            </span>
           </InfoLeftAndRight>
           <InfoLeftAndRight>
             <div className="hero-icon" />
           </InfoLeftAndRight>
         </InfoContainer>
+        <TechStackContainer>
+          <TechStackHeading>Tech Stack</TechStackHeading>
+          <TechIconsContainer>
+            <TechIconContainer>
+              <img src={HtmlIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={CssIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={JsIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={ReactIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={TailwindIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={NodeJsIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={SQLIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={MongoIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+            <TechIconContainer>
+              <img src={AWSIcon} width={"34px"} height={"34px"} />
+            </TechIconContainer>
+          </TechIconsContainer>
+        </TechStackContainer>
+        <ScrollAnimationContainer>
+          <Player
+            autoplay
+            loop
+            src="https://assets1.lottiefiles.com/packages/lf20_szlwbike.json"
+            style={{ height: "100px", width: "100px" }}
+          ></Player>
+        </ScrollAnimationContainer>
       </CenterContainer>
     </HeroSectionContainer>
   );

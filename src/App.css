@@ -38,12 +38,12 @@ body {
   max-width: 80%;
 }
 
-.fa-icons {
-  font-size: 3rem;
+.svg-inline--fa.fa-2xs {
+  font-size: 1.75rem;
   color: #2d2e32;
   cursor: pointer;
   transition: all 0.3s;
-  margin: 0px 10px 0px 0px;
+  margin: 10px 20px 0px 0px;
 }
 .github {
   font-size: 3rem;
@@ -51,8 +51,12 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.fa-icons:hover {
+.svg-inline--fa.fa-2xs:hover {
   color: #0a66c2;
+}
+
+.nav-active {
+  color: #2d2e32 !important;
 }
 
 @keyframes morph {
@@ -64,5 +68,21 @@ body {
   }
   100% {
     border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+@media screen and (max-width: 1124px) {
+  .info-container {
+    flex-direction: column-reverse;
+    gap: 2rem !important;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+    align-items: center !important;
+  }
+
+  .hero-desc h1 {
+    text-align: center;
   }
 }
